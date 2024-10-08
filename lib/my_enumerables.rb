@@ -6,6 +6,15 @@ module Enumerable
       i += 1
     end
   end
+
+  def my_select
+    selected_items = []
+    my_each do |item|
+      selected_items.push(item) if yield(item)
+    end
+    selected_items
+  end
+
 end
 
 # You will first have to define my_each
@@ -15,7 +24,7 @@ end
 class Array
   def my_each
     for item in self
-      yield item
+      yield item 
     end
   end
 end
