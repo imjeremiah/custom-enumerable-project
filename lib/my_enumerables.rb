@@ -36,6 +36,14 @@ module Enumerable
     true
   end
 
+  def my_count
+    count = 0
+    my_each do |item|
+      count += 1 if !block_given? || yield(item)
+    end
+    count
+  end
+
 end
 
 # You will first have to define my_each
