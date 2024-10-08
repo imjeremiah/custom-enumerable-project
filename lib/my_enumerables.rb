@@ -44,6 +44,14 @@ module Enumerable
     count
   end
 
+  def my_map
+    mapped_items = []
+    my_each do |item|
+      mapped_items.push(yield(item))
+    end
+    mapped_items
+  end
+
 end
 
 # You will first have to define my_each
