@@ -52,6 +52,14 @@ module Enumerable
     mapped_items
   end
 
+  def my_inject(initial)
+    aggregator = initial
+    my_each do |item|
+      aggregator = yield(aggregator, item)
+    end
+    aggregator
+  end
+
 end
 
 # You will first have to define my_each
